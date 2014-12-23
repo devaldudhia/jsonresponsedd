@@ -1,0 +1,28 @@
+extends layout
+
+block content
+ h1= title
+ p Welcome to #{title}
+ p
+  form(name="xoformname" id="xoformid" action="submitjson" method="post")
+   <br>
+   input(type="text" id="username" name="username" placeholder="enter your corp id")
+   
+   input(type="submit" class="btn btn-prim join-btn" formaction="loadjson" value="Load JSON")
+   <br>
+   <br>
+   textarea(id="xorequest" name="xorequest" cols="100" rows="100") 
+  
+   <br>
+   
+   if(locals.jsonresponse)
+    if(locals.jsonresponse.userName)
+     script(type="text/javascript").
+      var local_data =!{JSON.stringify(jsonresponse)}
+      var userName = local_data.userName;// get the userName
+      var jsonReq = local_data.jsonReq;//get the json request
+
+      document.getElementById('xorequest').value= jsonReq;
+      document.getElementById('username').value= userName; 
+      
+   input(type="submit" class="btn btn-prim join-btn" value="submit")
