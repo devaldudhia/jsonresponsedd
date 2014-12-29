@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var url = require('url');
 var app = require('../app');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 var offerCollection = require('./schema.js');
 var mongodb = require("mongodb");
 
@@ -13,7 +13,7 @@ var resString ={"showTurboReOptIn":false,"turboReOptInSelected":false,"paymentMe
 
 
 /* GET home page. */
-router.get('/', function(req, res) {
+/*router.get('/', function(req, res) {
 	mongoose.connect(mongoURL, function(error){
 		if(error) {
 			console.log("There is an error");
@@ -92,7 +92,7 @@ router.get('/updateOffer*', function(req,res){
 						});				}
 			);
     
-});
+}); */
 
 router.post('/submitjson*', function(req, res) {
 	console.log("Hi");
