@@ -100,7 +100,7 @@ router.post('/submitjson*', function(req, res) {
 	var userName  = req.body.username;
     var MongoClient = mongodb.MongoClient;
     
-    MongoClient.connect("mongoURL", function(err, db) {
+    MongoClient.connect(mongoURL, function(err, db) {
         if (!err) {
         	
         	db.collection("test").update(
