@@ -5,16 +5,17 @@ block content
  p Welcome to #{title}
  p
   form(name="xoformname" id="xoformid" action="submitjson" method="post")
-   <br>
-   input(type="text" id="username" name="username" placeholder="enter your corp id")
-   
-   input(type="submit" class="btn btn-prim join-btn" formaction="loadjson" value="Load JSON")
-   <br>
-   <br>
-   textarea(id="xorequest" name="xorequest" cols="100" rows="100") 
-  
-   <br>
-   
+   div(class="form-group")
+    <br>
+    div(style="display:inline;")
+     input(type="text" id="username" name="username" style="width:200px; margin-right: 10px;" placeholder="enter your corp id")
+       
+     input(type="submit" class="btn btn-primary" formaction="loadjson" value="Load JSON")
+     br
+     br
+    
+    textarea(id="xorequest" name="xorequest" class="form-control" rows="10" cols="100") 
+     
    if(locals.jsonresponse)
     if(locals.jsonresponse.userName)
      script(type="text/javascript").
@@ -25,4 +26,4 @@ block content
       document.getElementById('xorequest').value= jsonReq;
       document.getElementById('username').value= userName; 
       
-   input(type="submit" class="btn btn-prim join-btn" value="submit")
+   input(type="submit" class="btn btn-default" value="Save JSON")
