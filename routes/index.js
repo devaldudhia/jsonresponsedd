@@ -34,6 +34,8 @@ router.post('/submitjson*', function(req, res) {
         						 // console.dir(thor);
         						});	}
         			);
+        }else{
+        	console.log("Error connectiong to mongodb");
         }
     });
 });
@@ -50,6 +52,8 @@ router.post('/loadjson*', function(req, res) {
       		  console.dir(dbresponse);
       		  res.render('index',{ jsonresponse: { 'jsonReq' : dbresponse.jsonstr, 'userName': userName}});      		  
       		});
+        }else{
+        	console.log("error connectiong to mongodb");
         }
     });
 });
