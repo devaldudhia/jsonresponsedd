@@ -7,11 +7,11 @@ var offerCollection = require('./schema.js');
 var mongodb = require("mongodb");
 
 //Connection for mongoLAB
-//var mongoURL = "mongodb://heroku_app32785437:f393769d47o6ngu47jl4frnl90@ds039411.mongolab.com:39411/heroku_app32785437";
+var mongoURL = "mongodb://heroku_app32785437:f393769d47o6ngu47jl4frnl90@ds039411.mongolab.com:39411/heroku_app32785437";
 //connection for DoupMongo
 //var mongoURL = "mongodb://OMNmudOQNeFd:UUhwzKRtJQhm@mongosoup-cont002.mongosoup.de:31322/cc_OMNmudOQNeFd";
 //Connection local mongo
-var mongoURL = "mongodb://127.0.0.1/mydb";
+//var mongoURL = "mongodb://127.0.0.1/mydb";
 
 router.post('/submitjson*', function(req, res) {
 	var jsonReq = req.body.xorequest;
