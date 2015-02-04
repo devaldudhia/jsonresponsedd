@@ -1,7 +1,7 @@
 extends layout
 
 block content
- p( style ="font-size:300%;font-family:verdana;") JSON tool
+ p( style ="font-size:300%;font-family:verdana;") Mock JSON response tool
  p
   form(name="xoformname" id="xoformid" action="submitjson" method="post")
    div(class="form-group")
@@ -12,7 +12,8 @@ block content
      input(type="submit" class="btn btn-primary" formaction="loadjson" value="Load JSON")
      br
      br
-    
+    label(class="aria-label") Enter JSON you want in response
+    br
     textarea(id="xorequest" name="xorequest" class="form-control" rows="10" cols="100") 
      
    if(locals.jsonresponse)
